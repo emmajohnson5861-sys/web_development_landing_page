@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Stillform online store concept">
+  <defs>
+    <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9aa90"/><stop offset="1" stop-color="#aa5e48"/></linearGradient>
+    <linearGradient id="vase" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efdfc4"/><stop offset=".52" stop-color="#cbb795"/><stop offset="1" stop-color="#927d64"/></linearGradient>
+    <linearGradient id="product" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bbad91"/><stop offset="1" stop-color="#9c8d71"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="27" stdDeviation="23" flood-color="#713d30" flood-opacity=".35"/></filter>
+    <clipPath id="page"><rect x="58" y="74" width="784" height="552" rx="13"/></clipPath>
+  </defs>
+  <rect width="900" height="700" fill="url(#back)"/>
+  <path d="M0 99c220 64 414 62 900-44v57C548 209 262 197 0 142Z" fill="#e5c4ae" opacity=".3"/>
+  <circle cx="70" cy="633" r="243" fill="#9e5947" opacity=".3"/>
+  <g filter="url(#shadow)"><rect x="48" y="64" width="804" height="572" rx="21" fill="#352923"/><rect x="58" y="74" width="784" height="552" rx="13" fill="#f4eee5"/></g>
+  <g clip-path="url(#page)">
+    <rect x="58" y="74" width="784" height="552" fill="#f5efe5"/>
+    <text x="93" y="119" font-family="Georgia,serif" font-size="27" font-style="italic" fill="#342d28">stillform</text>
+    <text x="479" y="112" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.4" fill="#5a4f46">SHOP</text>
+    <text x="554" y="112" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.4" fill="#5a4f46">OUR STORY</text>
+    <text x="666" y="112" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.4" fill="#5a4f46">JOURNAL</text>
+    <circle cx="792" cy="108" r="13" fill="none" stroke="#53483f" stroke-width="1.5"/><text x="788" y="112" font-family="Arial,sans-serif" font-size="10" fill="#53483f">0</text>
+    <line x1="58" y1="139" x2="842" y2="139" stroke="#d9cfc0"/>
+    <rect x="79" y="163" width="427" height="419" fill="url(#product)"/>
+    <ellipse cx="298" cy="548" rx="136" ry="21" fill="#63584c" opacity=".28"/>
+    <path d="M91 487c152-83 264-70 415-98v193H79Z" fill="#afa083" opacity=".7"/>
+    <path d="M200 221c16 17 29 68 42 94m135-110c-36 46-43 65-48 104" fill="none" stroke="#3d4532" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="207" cy="240" rx="13" ry="48" fill="#6f7556" transform="rotate(-42 207 240)"/>
+    <ellipse cx="235" cy="280" rx="11" ry="43" fill="#858b6a" transform="rotate(26 235 280)"/>
+    <ellipse cx="379" cy="224" rx="14" ry="53" fill="#757c5c" transform="rotate(37 379 224)"/>
+    <ellipse cx="347" cy="272" rx="12" ry="44" fill="#5f6b50" transform="rotate(-22 347 272)"/>
+    <path d="M211 315h174l-15 31c-6 12-9 20-8 34l8 92c2 35-18 62-72 62s-74-27-72-62l8-92c1-14-2-22-8-34Z" fill="url(#vase)"/>
+    <ellipse cx="298" cy="315" rx="87" ry="14" fill="#e7d6b9"/>
+    <ellipse cx="298" cy="315" rx="58" ry="8" fill="#8f8068"/>
+    <path d="M241 346c25 13 86 17 115 0" fill="none" stroke="#eee2cc" stroke-width="3" opacity=".58"/>
+    <text x="551" y="205" font-family="Arial,sans-serif" font-size="9" letter-spacing="2.2" fill="#a26b54">THE OBJECTS EDIT / 01</text>
+    <text x="550" y="265" font-family="Georgia,serif" font-size="49" fill="#332e27">Objects for</text>
+    <text x="550" y="319" font-family="Georgia,serif" font-size="49" font-style="italic" fill="#332e27">living.</text>
+    <text x="551" y="366" font-family="Arial,sans-serif" font-size="12" fill="#746b60">Everyday pieces with a little more soul.</text>
+    <text x="551" y="389" font-family="Arial,sans-serif" font-size="12" fill="#746b60">Made to stay, made to be used.</text>
+    <line x1="551" y1="425" x2="794" y2="425" stroke="#c7bdaf"/>
+    <text x="551" y="455" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.1" fill="#413a32">THE COLUMN VASE</text>
+    <text x="756" y="455" font-family="Arial,sans-serif" font-size="10" fill="#413a32">$89</text>
+    <line x1="551" y1="474" x2="794" y2="474" stroke="#c7bdaf"/>
+    <circle cx="561" cy="511" r="7" fill="#c9b596"/><circle cx="585" cy="511" r="7" fill="#80715f"/><circle cx="609" cy="511" r="7" fill="#ad7057"/>
+    <text x="550" y="576" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.8" fill="#7c7166">GOOD THINGS TAKE FORM.</text>
+  </g>
+</svg>

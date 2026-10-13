@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Quiet Form architecture website concept">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e2d8ca"/><stop offset="1" stop-color="#beb4a7"/></linearGradient>
+    <linearGradient id="arch" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8c9b6"/><stop offset=".55" stop-color="#ab9a87"/><stop offset="1" stop-color="#665e53"/></linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffedd4"/><stop offset="1" stop-color="#d3b28d"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#4b4037" flood-opacity=".28"/></filter>
+    <clipPath id="page"><rect x="65" y="82" width="770" height="536" rx="12"/></clipPath>
+    <clipPath id="photo"><rect x="482" y="150" width="307" height="398" rx="2"/></clipPath>
+  </defs>
+  <rect width="900" height="700" fill="url(#wall)"/>
+  <circle cx="786" cy="73" r="254" fill="#f4eee6" opacity=".24"/>
+  <path d="M0 626 900 515v185H0Z" fill="#b6ab9e" opacity=".4"/>
+  <g filter="url(#shadow)"><rect x="55" y="72" width="790" height="556" rx="19" fill="#292826"/><rect x="65" y="82" width="770" height="536" rx="12" fill="#f5f1e9"/></g>
+  <g clip-path="url(#page)">
+    <rect x="65" y="82" width="770" height="536" fill="#f4f0e9"/>
+    <line x1="65" y1="137" x2="835" y2="137" stroke="#d6d0c6" stroke-width="1"/>
+    <text x="102" y="116" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#2e2b27">QUIET FORM</text>
+    <text x="549" y="113" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.6" fill="#403e38">STUDIO</text>
+    <text x="629" y="113" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.6" fill="#403e38">PROJECTS</text>
+    <text x="729" y="113" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.6" fill="#403e38">ABOUT</text>
+    <text x="103" y="193" font-family="Arial,sans-serif" font-size="8" letter-spacing="2.3" fill="#9a7961">ARCHITECTURE + INTERIORS</text>
+    <text x="102" y="280" font-family="Georgia,serif" font-size="60" fill="#302e2a">Spaces to</text>
+    <text x="102" y="343" font-family="Georgia,serif" font-size="60" font-style="italic" fill="#302e2a">feel at home.</text>
+    <line x1="102" y1="376" x2="189" y2="376" stroke="#9b6f55" stroke-width="2"/>
+    <text x="102" y="416" font-family="Arial,sans-serif" font-size="12" fill="#716d65">Considered spaces for the way we live.</text>
+    <text x="102" y="436" font-family="Arial,sans-serif" font-size="12" fill="#716d65">Made with warmth, restraint and purpose.</text>
+    <text x="102" y="553" font-family="Arial,sans-serif" font-size="8" letter-spacing="2" fill="#48433c">01 / 04  —  RESIDENTIAL WORK</text>
+    <g clip-path="url(#photo)">
+      <rect x="482" y="150" width="307" height="398" fill="#b6a694"/>
+      <rect x="482" y="150" width="307" height="398" fill="url(#arch)"/>
+      <circle cx="696" cy="256" r="125" fill="url(#sun)" opacity=".7"/>
+      <path d="M499 550V283c0-73 53-131 119-131s119 58 119 131v267Z" fill="#cab9a4"/>
+      <path d="M522 550V300c0-61 42-108 96-108s96 47 96 108v250Z" fill="#5a5a50"/>
+      <path d="M540 550V312c0-51 34-91 78-91s78 40 78 91v238Z" fill="#8f897a"/>
+      <path d="M547 550V318c0-47 31-84 71-84s71 37 71 84v232Z" fill="#c6baa7"/>
+      <path d="M482 424 789 354v194H482Z" fill="#a6927a" opacity=".6"/>
+      <path d="M482 498 789 443v105H482Z" fill="#e3d8ca"/>
+      <path d="M482 551 789 487" stroke="#c3b39e" stroke-width="3"/>
+      <path d="M536 549c20-83 41-124 68-151" fill="none" stroke="#565c46" stroke-width="9" stroke-linecap="round"/>
+      <ellipse cx="591" cy="398" rx="10" ry="38" fill="#667255" transform="rotate(-30 591 398)"/>
+      <ellipse cx="559" cy="442" rx="11" ry="45" fill="#737b5f" transform="rotate(30 559 442)"/>
+      <ellipse cx="608" cy="429" rx="9" ry="37" fill="#586b4b" transform="rotate(43 608 429)"/>
+      <path d="M481 548h308" stroke="#807465" stroke-width="4"/>
+    </g>
+    <text x="758" y="587" font-family="Arial,sans-serif" font-size="9" letter-spacing="2" fill="#5c554a">QF — 01</text>
+  </g>
+</svg>

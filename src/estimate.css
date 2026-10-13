@@ -1,0 +1,73 @@
+.estimate { background: var(--paper); color: var(--ink); }
+.estimate-inner { padding-block: var(--section-space); }
+.estimate-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: end; gap: clamp(40px, 5vw, 90px); margin-bottom: clamp(48px, 5vw, 72px); }
+.estimate-kicker { margin: 0 0 20px; color: #666; font-size: 14px; font-weight: 500; letter-spacing: -.02em; }
+.estimate-copy h2 { margin: 0; font-size: clamp(65px, 6.5vw, 90px); font-weight: 500; line-height: .99; letter-spacing: -.083em; }
+.estimate-lead { max-width: 350px; margin: 0 0 7px; color: #676b67; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.52; letter-spacing: -.02em; }
+.estimate-form { min-width: 0; margin: 0; padding-top: 32px; border-top: 1px solid #d9dbd5; }
+.estimate-services { min-width: 0; margin: 0 0 38px; padding: 0; border: 0; }
+.estimate-services legend { margin-bottom: 17px; padding: 0; color: #555a54; font-size: 14px; font-weight: 500; }
+.estimate-service-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.estimate-service-option { position: relative; cursor: pointer; }
+.estimate-service-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.estimate-service-option span { display: flex; align-items: center; gap: 11px; min-height: 48px; padding: 13px 22px; border: 1px solid #d0d3cb; border-radius: 999px; color: #555a54; font-size: 15px; line-height: 1.2; transition: background-color .2s, border-color .2s, color .2s; }
+.estimate-service-option span::before { width: 7px; height: 7px; flex: none; border: 1px solid #8b9086; border-radius: 50%; content: ''; }
+.estimate-service-option input:checked + span { border-color: var(--ink); background: var(--ink); color: #fff; }
+.estimate-service-option input:checked + span::before { border-color: var(--orange); background: var(--orange); }
+.estimate-service-option input:focus-visible + span { outline: 2px solid var(--orange); outline-offset: 4px; }
+.estimate-service-option:hover span { border-color: var(--ink); }
+.estimate-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px clamp(28px, 5vw, 72px); }
+.estimate-field { display: block; min-width: 0; color: #555a54; font-size: 13px; font-weight: 500; }
+.estimate-optional { color: #888d84; font-weight: 400; }
+.estimate-field input,
+.estimate-field select,
+.estimate-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 54px;
+  margin-top: 5px;
+  padding: 11px 0 13px;
+  border: 0;
+  border-bottom: 1px solid #bfc4b8;
+  border-radius: 0;
+  background: transparent;
+  color: #151616;
+  font: 400 20px/1.4 'DM Sans', Arial, sans-serif;
+  transition: border-color .2s;
+}
+.estimate-field input::placeholder,
+.estimate-field textarea::placeholder { color: #858b80; opacity: 1; }
+.estimate-field :is(input, select, textarea):focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-color: var(--orange); }
+.estimate-field select { padding-right: 26px; }
+.estimate-field textarea { min-height: 104px; resize: vertical; }
+.estimate-field-full { grid-column: 1 / -1; }
+.estimate-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 26px; margin-top: 31px; }
+.estimate-form-note { margin: 0; color: #7b8174; font-size: 13px; line-height: 1.7; }
+.estimate-submit { display: inline-flex; align-items: center; justify-content: space-between; gap: 34px; min-width: 218px; min-height: 57px; padding: 15px 24px; border: 0; border-radius: 999px; background: var(--orange); color: #fff; font-size: 16px; font-weight: 600; transition: background-color .3s; }
+.estimate-submit::before { background: #050505; }
+.estimate-submit:is(:hover, :focus-visible) { background: #050505; }
+.estimate-status { margin: 20px 0 0; color: #676b67; font-size: 14px; line-height: 1.5; }
+.estimate-status[hidden] { display: none; }
+
+@media (max-width: 900px) {
+  .estimate-copy h2 { font-size: clamp(60px, 7.5vw, 75px); }
+  .estimate-intro { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px; }
+}
+@media (max-width: 620px) {
+  .estimate-intro { grid-template-columns: 1fr; gap: 25px; margin-bottom: 40px; }
+  .estimate-copy h2 { font-size: clamp(47px, 10.8vw, 68px); }
+  .estimate-lead { max-width: 410px; margin: 0; font-size: 16px; }
+  .estimate-form { padding-top: 25px; }
+  .estimate-fields { grid-template-columns: 1fr; gap: 26px; }
+  .estimate-services { margin-bottom: 31px; }
+  .estimate-service-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .estimate-service-option span { justify-content: center; gap: 8px; min-height: 46px; padding: 12px 9px; font-size: 13px; }
+  .estimate-field input, .estimate-field select, .estimate-field textarea { font-size: 18px; }
+  .estimate-form-footer { flex-direction: column-reverse; align-items: stretch; gap: 20px; }
+  .estimate-submit { width: 100%; }
+  .estimate-form-note { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .estimate-service-option span, .estimate-submit, .estimate-field input, .estimate-field select, .estimate-field textarea { transition: none; }
+}

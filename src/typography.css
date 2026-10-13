@@ -1,0 +1,49 @@
+:root {
+  --heading-font: 'DM Sans', Arial, sans-serif;
+  --section-heading-size: clamp(65px, 6.5vw, 90px);
+  --card-heading-size: clamp(24px, 2.35vw, 32px);
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); }
+
+h2.section-heading {
+  font-family: var(--heading-font);
+  font-size: var(--section-heading-size);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: -.065em;
+}
+
+h3.card-heading,
+.service-card .service-name {
+  font-family: var(--heading-font);
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.card-heading em { font: inherit; }
+.work-preview-footer h2 { font-family: var(--heading-font); font-size: var(--card-heading-size); font-weight: 600; line-height: 1.15; letter-spacing: -.045em; }
+.footer-column h3 { font-family: var(--heading-font); font-size: 18px; font-weight: 500; line-height: 1.3; letter-spacing: -.02em; }
+
+/* Give the longer introduction room when its heading scale changes. */
+.who-copy-track { height: auto; min-height: 800px; }
+.trust-left-grid { grid-template-rows: 385px 310px; }
+
+@media (max-width: 900px) {
+  .who-copy-track { min-height: 760px; }
+}
+@media (max-width: 800px) {
+  .trust-left-grid { grid-template-rows: 370px 310px; }
+}
+@media (max-width: 620px) {
+  :root {
+    --section-heading-size: clamp(40px, 10.8vw, 68px);
+    --card-heading-size: 24px;
+  }
+  .who-copy-track { min-height: 700px; }
+  .trust-left-grid { grid-template-rows: auto; }
+  .trust-card-tools, .trust-card-future { min-height: 290px; }
+}

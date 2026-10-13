@@ -1,0 +1,73 @@
+.trust{overflow:hidden;background:#fff;color:#0a0b0d}
+.trust-inner{padding:var(--section-space) 0}
+.trust-kicker{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 24px;font-size:15px;font-weight:500;letter-spacing:-.025em}
+.trust-kicker span{font-size:20px;line-height:1;color:var(--orange)}
+.trust-title{margin:0 auto clamp(58px,6vw,78px);text-align:center;font-size:clamp(64px,7.2vw,102px);font-weight:600;line-height:.96;letter-spacing:-.07em}
+.trust-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:10px}
+.trust-left-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:385px 270px;gap:10px;min-width:0}
+.trust-card{position:relative;min-width:0;overflow:hidden;border-radius:16px;background:#f5f5f5}
+.trust-card h3{margin:0;font-size:clamp(23px,2vw,29px);font-weight:600;line-height:1.12;letter-spacing:-.055em}
+.trust-card p{margin:6px 0 0;color:#636466;font-size:15px;line-height:1.34;letter-spacing:-.026em}
+.trust-card-plans,.trust-card-clients{grid-column:span 3}
+.trust-card-plans{background:#f3f3f3}
+.trust-card-copy{position:relative;z-index:3;max-width:320px;padding:31px}
+.trust-payment-wave{position:absolute;right:0;bottom:0;left:0;width:100%;height:168px;object-fit:cover;filter:grayscale(1) sepia(1) saturate(5) hue-rotate(342deg)}
+.trust-payment-card{position:absolute;z-index:2;right:16%;bottom:22px;left:16%;height:220px;border-radius:8px;background:linear-gradient(130deg,#2a2a2d,#090a0d 60%,#242428);box-shadow:0 16px 30px #1115;transform:perspective(800px) rotateY(-4deg);transition:transform .5s;perspective:800px}
+.trust-card-plans:hover .trust-payment-card{transform:perspective(800px) rotateY(0) translateY(-5px)}
+.trust-payment-chip{position:absolute;top:27px;left:22px;width:43px}
+.trust-payment-mark{position:absolute;top:30px;left:50%;width:70px;height:122px;object-fit:contain;backface-visibility:visible;animation:trust-dollar-flip 3.5s linear infinite alternate}
+.trust-payment-card span{position:absolute;bottom:19px;left:0;width:100%;color:#d6d5d4;font-size:13px;text-align:center}
+.trust-payment-card i{color:var(--orange);font-style:normal}
+.trust-card-clients{background:#f5f5f5}
+.trust-clients-top{position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:30px}
+.trust-clients-top>div{min-width:0;flex:1 1 145px}
+.trust-clients-top p{margin-top:3px;color:#101112;font-size:15px}
+.trust-clients-top strong{font-weight:600}
+.trust-stars{font-size:19px;letter-spacing:.02em}
+.trust-clients-years{font-size:25px;font-weight:600;letter-spacing:-.07em;white-space:nowrap}
+.trust-clients-years small{color:#757677;font-size:13px;font-weight:400;letter-spacing:-.03em}
+.trust-clients-visual{position:absolute;inset:0;overflow:hidden}
+.trust-clients-ring{position:absolute;top:74%;left:50%;width:260px;aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #e2e2e2;border-radius:50%}
+.trust-clients-ring.ring-two{width:370px}
+.trust-clients-logo{position:absolute;top:70%;left:50%;width:130px;height:auto;transform:translate(-50%,-50%)}
+.trust-avatar-orbit{position:absolute;top:70%;left:50%;width:54px;height:min(380px,94vw);transform-origin:center;animation:trust-avatar-orbit 58s linear infinite}
+.trust-avatar-orbit img{position:absolute;top:0;left:0;width:54px;height:54px;border-radius:50%;object-fit:cover;filter:saturate(.85);animation:trust-avatar-counter 58s linear infinite}
+@keyframes trust-dollar-flip{from{transform:translateX(-50%) rotateY(0deg)}to{transform:translateX(-50%) rotateY(180deg)}}
+@keyframes trust-avatar-orbit{from{transform:translate(-50%,-50%) rotate(var(--angle))}to{transform:translate(-50%,-50%) rotate(calc(var(--angle) + 360deg))}}
+@keyframes trust-avatar-counter{from{transform:rotate(var(--counter))}to{transform:rotate(calc(var(--counter) - 360deg))}}
+.trust-card-tools,.trust-card-future,.trust-card-support{grid-column:span 2}
+.trust-card-tools{padding:26px 23px;background:#fff;border:1px solid #e6e6e6}
+.trust-card-tools h3{font-size:25px}
+.trust-card-tools p{max-width:215px}
+.trust-tool-icons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-content:start;gap:7px;max-width:193px;margin:30px 0 0}
+.trust-tool-icons span{display:grid;place-items:center;width:100%;aspect-ratio:1;border-radius:50%;background:#0d0e10;color:#fff;font-size:17px;font-weight:700;letter-spacing:-.07em;transition:transform .3s,background .3s}
+.trust-tool-icons span:nth-child(2n){background:#dedede;color:#161718}
+.trust-tool-icons img{display:block;width:60%;height:60%;object-fit:contain}
+.trust-tool-icons span:nth-child(odd) img,.trust-tool-icons span:hover img{filter:invert(1)}
+.trust-tool-icons span:hover{transform:translateY(-4px);background:var(--orange);color:#fff}
+.trust-card-future{display:grid;place-items:center;background:#423930;color:#fff}
+.trust-card-future::after{position:absolute;inset:0;background:linear-gradient(#0003,#0008);content:''}
+.trust-card-future img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.trust-card-future:hover img{transform:scale(1.06)}
+.trust-card-future h3{position:relative;z-index:1;text-align:center;color:#fff;font-size:clamp(25px,2.3vw,34px);text-shadow:0 2px 10px #0006}
+.trust-card-future em{font-style:italic;font-weight:400}
+.trust-card-support{padding:26px 23px;background:#fff;border:1px solid #e6e6e6}
+.trust-card-support h3{font-size:30px}
+.trust-card-support p{margin-top:3px}
+.trust-card-support>img{position:absolute;right:-5px;bottom:-8px;width:75%;height:auto}
+.trust-chat{position:absolute;z-index:2;right:16px;bottom:26px;left:18px;display:flex;align-items:end;flex-wrap:wrap;gap:7px}
+.trust-chat span:not(.trust-chat-avatar){padding:8px 10px;border-radius:20px 20px 20px 3px;background:#0d0e10;color:#fff;font-size:11px;font-weight:600;white-space:nowrap}
+.trust-chat span:nth-child(3){margin-left:7px}
+.trust-chat-avatar{width:27px;height:27px;border-radius:50%;background:var(--orange) url('/brand/algofort-dark.png') center/70% auto no-repeat}
+.trust-chat i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#0d0e10;color:#fff;font-size:15px;font-style:normal}
+.trust-card-strategy{display:flex;flex-direction:column;justify-content:space-between;min-height:665px;padding:31px;background:#080b0e;color:#fff}
+.trust-card-strategy h3{max-width:320px;font-size:clamp(26px,2.2vw,33px)}
+.trust-card-strategy ul{display:grid;gap:11px;margin:28px 0 31px;padding:0;list-style:none}
+.trust-card-strategy li{color:#b8b9b9;font-size:15px;line-height:1.3}
+.trust-card-strategy li::before{margin-right:10px;color:var(--orange);content:'✦'}
+.trust-strategy-image{position:absolute;right:-24%;bottom:-41%;width:120%;height:auto;opacity:.94;transition:transform .7s}
+.trust-card-strategy:hover .trust-strategy-image{transform:translateY(-12px) rotate(4deg)}
+@media(max-width:1000px){.trust-left-grid{grid-template-rows:370px 270px}.trust-card-copy{padding:24px}.trust-clients-top{padding:23px}.trust-card-strategy{padding:26px}.trust-card-strategy li{font-size:14px}.trust-card-support>img{width:90%}}
+@media(max-width:800px){.trust-grid{grid-template-columns:1fr}.trust-left-grid{grid-template-rows:370px 270px}.trust-card-strategy{min-height:480px}.trust-strategy-image{right:-6%;bottom:-45%;width:60%}}
+@media(max-width:620px){.trust-inner{padding-block:var(--section-space)}.trust-title{margin-bottom:43px;font-size:clamp(48px,12vw,70px)}.trust-grid{gap:10px}.trust-left-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}.trust-card-plans,.trust-card-clients{grid-column:span 2;min-height:390px}.trust-card-tools,.trust-card-future,.trust-card-support{grid-column:span 1;min-height:260px}.trust-card-support{grid-column:span 2;min-height:265px}.trust-card-tools{padding:20px 17px}.trust-card-tools h3{font-size:21px}.trust-card-tools p{font-size:13px}.trust-tool-icons{gap:5px}.trust-tool-icons span{width:100%;height:auto;font-size:14px}.trust-card-future h3{font-size:25px}.trust-card-support>img{width:180px}.trust-card-strategy{min-height:560px}.trust-strategy-image{right:-15%;bottom:-23%;width:92%}}
+@media(prefers-reduced-motion:reduce){.trust-payment-card,.trust-tool-icons span,.trust-card-future img,.trust-strategy-image{transition:none}.trust-payment-mark,.trust-avatar-orbit,.trust-avatar-orbit img{animation:none}.trust-payment-mark{transform:translateX(-50%)}.trust-avatar-orbit{transform:translate(-50%,-50%) rotate(var(--angle))}.trust-avatar-orbit img{transform:rotate(var(--counter))}}
