@@ -1,7 +1,7 @@
 .work {
   position: relative;
   isolation: isolate;
-  background: var(--paper);
+  background: none;
 }
 
 .work-inner {

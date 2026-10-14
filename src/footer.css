@@ -1,4 +1,4 @@
-.site-footer { background: #efefed; color: #151616; }
+.site-footer { background: none; color: #151616; }
 .footer-inner { padding-top: var(--section-space); }
 .footer-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(50px, 8vw, 130px); padding-bottom: 85px; }
 .footer-conversation { min-width: 0; }

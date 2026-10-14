@@ -1,4 +1,4 @@
-.estimate { background: var(--paper); color: var(--ink); }
+.estimate { background: none; color: var(--ink); }
 .estimate-inner { padding-block: var(--section-space); }
 .estimate-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: end; gap: clamp(40px, 5vw, 90px); margin-bottom: clamp(48px, 5vw, 72px); }
 .estimate-kicker { margin: 0 0 20px; color: #666; font-size: 14px; font-weight: 500; letter-spacing: -.02em; }
