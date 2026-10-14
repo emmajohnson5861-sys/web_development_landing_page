@@ -30,7 +30,7 @@ body {
 .headline-word { display: inline-block; font-size: var(--headline-size); line-height: 1; font-weight: 800; letter-spacing: -.082em; white-space: nowrap; transform: translateY(115%); animation: title-rise 1s cubic-bezier(.16,1,.3,1) .1s both; }
 .headline-web { animation-delay: .32s; }
 .headline-media { display: grid; place-items: center; flex: none; width: calc(var(--headline-size) * 1.5); height: calc(var(--headline-size) * .72); overflow: hidden; border-radius: clamp(10px, 1.7vw, 25px); background: #050505; transform: translateY(25px) scale(.8); opacity: 0; animation: tile-arrive 1s cubic-bezier(.16,1,.3,1) .46s both; }
-.headline-media video { display: block; width: calc(var(--headline-size) * .62); height: calc(var(--headline-size) * .62); border-radius: 50%; object-fit: cover; object-position: center; }
+.headline-media video { display: block; width: 100%; height: 100%; border-radius: 0; object-fit: cover; object-position: center; }
 .headline-secondary { display: block; margin-top: 8px; font-size: clamp(1.25rem, 7.5vw, 6.65rem); line-height: 1.08; font-weight: 300; letter-spacing: -.067em; white-space: nowrap; opacity: 0; transform: translateY(20px); animation: secondary-arrive .85s ease .6s both; }
 
 /* Lower composition follows the three-column geometry of the reference. */
