@@ -5,14 +5,15 @@
 .footer-email { display: flex; align-items: center; gap: 12px; min-height: 76px; padding: 12px 18px 12px 28px; border-radius: 999px; background: #e3e3e0; }
 .footer-email input { width: 100%; min-width: 0; padding: 8px 0; border: 0; background: transparent; color: #151616; font: 400 19px/1.4 'DM Sans', Arial, sans-serif; }
 .footer-email input::placeholder { color: #777a75; opacity: 1; }
-.footer-email input:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 3px; }
+.footer-email input:focus,
+.footer-email input:focus-visible { outline: none; }
 .footer-subscribe { display: grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #151616; transition: background-color .3s, color .3s; }
 .footer-subscribe:is(:hover, :focus-visible) { background: #151616; color: #fff; }
 .footer-subscribe:is(:hover, :focus-visible) .cta-arrows span:first-child { transform: translateX(125%); }
 .footer-subscribe:is(:hover, :focus-visible) .cta-arrows span:last-child { transform: translateX(0); }
 .footer-consent { margin: 21px 0 0; font-size: 14px; line-height: 1.6; }
 .footer-consent a { text-decoration: underline; text-underline-offset: 4px; }
-.footer-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr) minmax(0, 1.25fr); gap: 28px; }
+.footer-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; }
 .footer-label { margin: 0 0 29px; color: #686b65; }
 .footer-column ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
 .footer-column a { font-size: 15px; line-height: 1.45; transition: color .2s; }
@@ -21,7 +22,7 @@
 .footer-bottom { position: relative; display: flex; align-items: center; justify-content: center; min-height: 109px; padding: 24px 70px; border-top: 1px solid #d9dad5; }
 .footer-bottom p { margin: 0; text-align: center; font-size: 14px; line-height: 1.5; }
 .footer-bottom p a { color: #777a75; }
-.footer-back-top { position: absolute; right: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--orange); color: #050505; transition: background-color .3s, color .3s; }
+.footer-back-top { position: absolute; right: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--orange); color: #fff; transition: background-color .3s, color .3s; }
 .footer-back-top svg { width: 19px; height: 19px; }
 .site-footer .footer-back-top:is(:hover, :focus-visible) { background: #050505; color: #fff; }
 .footer-status { margin: 15px 0 0; color: #676b67; font-size: 13px; line-height: 1.5; }

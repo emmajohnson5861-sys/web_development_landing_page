@@ -6,9 +6,17 @@
     <meta name="theme-color" content="#f7f7f5" />
     <meta name="description" content="Algofort designs and develops websites and digital experiences for ambitious businesses." />
     <title>Creative Web Development Agency — Algofort</title>
+    <link rel="icon" type="image/png" href="/images/fav-icon.png" />
+    <link rel="apple-touch-icon" href="/images/fav-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      /* Critical Anti-FOUC: set page canvas background immediately before stylesheet parses */
+      html, body { background-color: #f1f1ee; color: #151616; }
+    </style>
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <header class="site-header page-width">
@@ -16,18 +24,18 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#who" aria-label="About Us"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">About Us</span><span class="roll-line roll-line-two">About Us</span></span></a>
         <a href="#services" aria-label="Services"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Services</span><span class="roll-line roll-line-two">Services</span></span></a>
-        <a href="https://www.algofort.com/about-us/" aria-label="Team"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Team</span><span class="roll-line roll-line-two">Team</span></span></a>
+        <a href="#work" aria-label="Projects"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Projects</span><span class="roll-line roll-line-two">Projects</span></span></a>
         <a href="#testimonials" aria-label="Testimonial"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Testimonial</span><span class="roll-line roll-line-two">Testimonial</span></span></a>
       </nav>
-      <a class="contact-button roll-button" href="https://www.algofort.com/contact-us" aria-label="Contact Us"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Contact Us</span><span class="roll-line roll-line-two">Contact Us</span></span></a>
+      <a class="contact-button roll-button" href="#estimate" aria-label="Contact Us"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Contact Us</span><span class="roll-line roll-line-two">Contact Us</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a>
       <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </header>
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
       <a href="#who">About Us</a>
       <a href="#services">Services</a>
-      <a href="https://www.algofort.com/about-us/">Team</a>
+      <a href="#work">Projects</a>
       <a href="#testimonials">Testimonial</a>
-      <a href="https://www.algofort.com/contact-us">Contact Us</a>
+      <a href="#estimate">Contact Us</a>
     </nav>
 
     <main id="top">
@@ -35,7 +43,7 @@
         <h1 class="hero-heading" id="hero-title">
           <span class="headline-row">
             <span class="headline-word headline-creative">CREATIVE</span>
-            <span class="headline-media" aria-hidden="true"><video class="shared-video title-video" src="/media/reel-teaser.mp4" autoplay muted loop playsinline preload="metadata"></video></span>
+            <span class="headline-media" aria-hidden="true"><video class="shared-video title-video" src="/media/showcase-01.mp4" autoplay muted loop playsinline preload="metadata"></video></span>
             <span class="headline-word headline-web">WEB</span>
           </span>
           <span class="headline-secondary">DEVELOPMENT AGENCY</span>
@@ -69,8 +77,8 @@
               </clipPath>
             </defs>
           </svg>
-          <div class="showcase-video-mask"><video class="shared-video showcase-video" src="/media/reel-teaser.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="video-shade"></span></div>
-          <div class="showcase-action"><a class="roll-button" href="https://www.algofort.com/about-us/" aria-label="Know More"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Know More</span><span class="roll-line roll-line-two">Know More</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span></span></a></div>
+          <div class="showcase-video-mask"><video class="shared-video showcase-video" src="/media/showcase-02.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="video-shade"></span></div>
+          <div class="showcase-action"><a class="roll-button" href="#who" aria-label="Know More"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Know More</span><span class="roll-line roll-line-two">Know More</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span></span></a></div>
         </div>
 
         <div class="stats-column" aria-label="Algofort in numbers">
@@ -107,44 +115,44 @@
 
           <div class="services-showcase">
             <div class="services-list reveal-on-scroll">
-              <a class="service-row" href="https://www.algofort.com/custom-website-development-services/" aria-label="Explore custom website development">
+              <a class="service-row" href="#estimate" aria-label="Explore WordPress development">
                 <span class="service-layer service-layer-back" aria-hidden="true"></span><span class="service-layer service-layer-middle" aria-hidden="true"></span><span class="service-layer service-layer-front" aria-hidden="true"></span>
                 <span class="service-card">
                   <span class="service-corner service-corner-tl" aria-hidden="true">+</span><span class="service-corner service-corner-tr" aria-hidden="true">○</span><span class="service-corner service-corner-bl" aria-hidden="true">✦</span><span class="service-corner service-corner-br" aria-hidden="true">□</span>
-                  <span class="service-number">01</span><span class="service-name">Custom websites</span>
-                  <span class="service-description">A clear, fast home for your brand—with the details that make it yours.</span>
+                  <span class="service-number">01</span><span class="service-name">WordPress</span>
+                  <span class="service-description">Flexible, easy-to-manage sites built for speed and content growth.</span>
                 </span>
               </a>
-              <a class="service-row" href="https://www.algofort.com/ecommerce-website-development-service/" aria-label="Explore e-commerce development">
+              <a class="service-row" href="#estimate" aria-label="Explore Shopify development">
                 <span class="service-layer service-layer-back" aria-hidden="true"></span><span class="service-layer service-layer-middle" aria-hidden="true"></span><span class="service-layer service-layer-front" aria-hidden="true"></span>
                 <span class="service-card">
                   <span class="service-corner service-corner-tl" aria-hidden="true">+</span><span class="service-corner service-corner-tr" aria-hidden="true">○</span><span class="service-corner service-corner-bl" aria-hidden="true">✦</span><span class="service-corner service-corner-br" aria-hidden="true">□</span>
-                  <span class="service-number">02</span><span class="service-name">E-commerce</span>
-                  <span class="service-description">Stores that make products easy to find and checkout simple.</span>
+                  <span class="service-number">02</span><span class="service-name">Shopify</span>
+                  <span class="service-description">High-converting online stores crafted for seamless sales and checkout.</span>
                 </span>
               </a>
-              <a class="service-row" href="https://www.algofort.com/app-development/" aria-label="Explore web application development">
+              <a class="service-row" href="#estimate" aria-label="Explore React development">
                 <span class="service-layer service-layer-back" aria-hidden="true"></span><span class="service-layer service-layer-middle" aria-hidden="true"></span><span class="service-layer service-layer-front" aria-hidden="true"></span>
                 <span class="service-card">
                   <span class="service-corner service-corner-tl" aria-hidden="true">+</span><span class="service-corner service-corner-tr" aria-hidden="true">○</span><span class="service-corner service-corner-bl" aria-hidden="true">✦</span><span class="service-corner service-corner-br" aria-hidden="true">□</span>
-                  <span class="service-number">03</span><span class="service-name">Web applications</span>
-                  <span class="service-description">Dashboards, portals and tools built around real workflows.</span>
+                  <span class="service-number">03</span><span class="service-name">React</span>
+                  <span class="service-description">Fast, dynamic web apps and user interfaces engineered to scale.</span>
                 </span>
               </a>
-              <a class="service-row" href="https://www.algofort.com/website-development-services/" aria-label="Explore content management solutions">
+              <a class="service-row" href="#estimate" aria-label="Explore custom website development">
                 <span class="service-layer service-layer-back" aria-hidden="true"></span><span class="service-layer service-layer-middle" aria-hidden="true"></span><span class="service-layer service-layer-front" aria-hidden="true"></span>
                 <span class="service-card">
                   <span class="service-corner service-corner-tl" aria-hidden="true">+</span><span class="service-corner service-corner-tr" aria-hidden="true">○</span><span class="service-corner service-corner-bl" aria-hidden="true">✦</span><span class="service-corner service-corner-br" aria-hidden="true">□</span>
-                  <span class="service-number">04</span><span class="service-name">Content platforms</span>
-                  <span class="service-description">Flexible systems your team can publish and update with ease.</span>
+                  <span class="service-number">04</span><span class="service-name">Custom Website</span>
+                  <span class="service-description">Bespoke web experiences handcrafted to set your brand apart.</span>
                 </span>
               </a>
             </div>
             <div class="services-feature reveal-on-scroll" aria-hidden="true">
-              <img class="services-feature-image is-current" src="/media/services/custom-generated.webp" alt="" width="1024" height="1536" decoding="async" loading="lazy" />
-              <img class="services-feature-image" src="/media/services/commerce-generated.webp" alt="" width="1024" height="1536" decoding="async" loading="lazy" />
-              <img class="services-feature-image" src="/media/services/applications-generated.webp" alt="" width="1024" height="1536" decoding="async" loading="lazy" />
-              <img class="services-feature-image" src="/media/services/platforms-generated.webp" alt="" width="1024" height="1536" decoding="async" loading="lazy" />
+              <img class="services-feature-image is-current" src="/media/services/wordpress-generated.jpg" alt="WordPress editorial website preview" width="1024" height="1536" decoding="async" loading="lazy" />
+              <img class="services-feature-image" src="/media/services/shopify-generated.jpg" alt="Shopify e-commerce store preview" width="1024" height="1536" decoding="async" loading="lazy" />
+              <img class="services-feature-image" src="/media/services/react-generated.jpg" alt="React web application dashboard preview" width="1024" height="1536" decoding="async" loading="lazy" />
+              <img class="services-feature-image" src="/media/services/custom-generated.jpg" alt="Custom website development and coding preview" width="1024" height="1536" decoding="async" loading="lazy" />
             </div>
           </div>
         </div>
@@ -194,37 +202,37 @@
           </div>
 
           <div class="work-stack">
-            <article class="work-card" aria-labelledby="work-quiet-title">
+            <article class="work-card" aria-labelledby="work-kingsdale-title">
               <div class="work-card-data">
                 <div class="work-data-top"><span>PROJECT</span><strong>01<span> / 04</span></strong></div>
                 <div class="work-data-bottom"><span>FORMAT</span><strong>Brand website</strong></div>
               </div>
-              <div class="work-visual work-visual-quiet"><img src="/media/work/quiet-form-generated.webp" alt="Concept preview of an architecture studio website" loading="lazy" decoding="async" width="1448" height="1086" /></div>
-              <div class="work-card-details"><button class="work-view" type="button" aria-label="View Quiet Form concept"><span>View</span><span class="work-view-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span></button><div><span class="work-card-caption">PROJECT / Architecture studio concept</span><h3 class="card-heading" id="work-quiet-title">Quiet Form</h3></div></div>
+              <div class="work-visual work-visual-quiet"><img src="/media/work/kingsdale-mic.jpg" alt="Showcase preview of Kingsdale Mortgage Investment Corporation brand website" loading="lazy" decoding="async" width="1448" height="1086" /></div>
+              <div class="work-card-details"><a class="work-view roll-button" href="https://pulsemarketing.cloud/Kingsdale-mic/" target="_blank" rel="noopener noreferrer" aria-label="View Kingsdale MIC project"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">View</span><span class="roll-line roll-line-two">View</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><div><span class="work-card-caption">PROJECT / Mortgage investment brand website</span><h3 class="card-heading" id="work-kingsdale-title">Kingsdale MIC</h3></div></div>
             </article>
-            <article class="work-card" aria-labelledby="work-still-title">
+            <article class="work-card" aria-labelledby="work-dekora-title">
               <div class="work-card-data">
                 <div class="work-data-top"><span>PROJECT</span><strong>02<span> / 04</span></strong></div>
                 <div class="work-data-bottom"><span>FORMAT</span><strong>E-commerce</strong></div>
               </div>
-              <div class="work-visual work-visual-still"><img src="/media/work/stillform-generated.webp" alt="Concept preview of a homeware online store" loading="lazy" decoding="async" width="1448" height="1086" /></div>
-              <div class="work-card-details"><button class="work-view" type="button" aria-label="View Stillform concept"><span>View</span><span class="work-view-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span></button><div><span class="work-card-caption">PROJECT / Homeware storefront concept</span><h3 class="card-heading" id="work-still-title">Stillform</h3></div></div>
+              <div class="work-visual work-visual-still"><img src="/media/work/dekora.jpg" alt="Showcase preview of Dekora luxury home staging and design storefront" loading="lazy" decoding="async" width="1448" height="1086" /></div>
+              <div class="work-card-details"><a class="work-view roll-button" href="https://dekora.com/" target="_blank" rel="noopener noreferrer" aria-label="View Dekora project"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">View</span><span class="roll-line roll-line-two">View</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><div><span class="work-card-caption">PROJECT / Luxury staging &amp; design storefront</span><h3 class="card-heading" id="work-dekora-title">Dekora</h3></div></div>
             </article>
-            <article class="work-card" aria-labelledby="work-mono-title">
+            <article class="work-card" aria-labelledby="work-kiosky-title">
               <div class="work-card-data">
                 <div class="work-data-top"><span>PROJECT</span><strong>03<span> / 04</span></strong></div>
                 <div class="work-data-bottom"><span>FORMAT</span><strong>Web application</strong></div>
               </div>
-              <div class="work-visual work-visual-mono"><img src="/media/work/mono-generated.webp" alt="Concept preview of an analytics dashboard" loading="lazy" decoding="async" width="1448" height="1086" /></div>
-              <div class="work-card-details"><button class="work-view" type="button" aria-label="View Mono concept"><span>View</span><span class="work-view-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span></button><div><span class="work-card-caption">PROJECT / Analytics workspace concept</span><h3 class="card-heading" id="work-mono-title">Mono</h3></div></div>
+              <div class="work-visual work-visual-mono"><img src="/media/work/kiosky.jpg" alt="Showcase preview of Kiosky interactive custom product design web application" loading="lazy" decoding="async" width="1448" height="1086" /></div>
+              <div class="work-card-details"><a class="work-view roll-button" href="https://kiosky.me/" target="_blank" rel="noopener noreferrer" aria-label="View Kiosky project"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">View</span><span class="roll-line roll-line-two">View</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><div><span class="work-card-caption">PROJECT / Custom product design web application</span><h3 class="card-heading" id="work-kiosky-title">Kiosky</h3></div></div>
             </article>
-            <article class="work-card" aria-labelledby="work-field-title">
+            <article class="work-card" aria-labelledby="work-artists-title">
               <div class="work-card-data">
                 <div class="work-data-top"><span>PROJECT</span><strong>04<span> / 04</span></strong></div>
                 <div class="work-data-bottom"><span>FORMAT</span><strong>Content platform</strong></div>
               </div>
-              <div class="work-visual work-visual-field"><img src="/media/work/fieldnotes-generated.webp" alt="Concept preview of an editorial content platform" loading="lazy" decoding="async" width="1536" height="1024" /></div>
-              <div class="work-card-details"><button class="work-view" type="button" aria-label="View Fieldnotes concept"><span>View</span><span class="work-view-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span></button><div><span class="work-card-caption">PROJECT / Editorial journal concept</span><h3 class="card-heading" id="work-field-title">Fieldnotes</h3></div></div>
+              <div class="work-visual work-visual-field"><img src="/media/work/artists-emerge.jpg" alt="Showcase preview of Artists Emerge dance championship and media platform" loading="lazy" decoding="async" width="1448" height="1086" /></div>
+              <div class="work-card-details"><a class="work-view roll-button" href="https://artistsemerge.com/" target="_blank" rel="noopener noreferrer" aria-label="View Artists Emerge project"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">View</span><span class="roll-line roll-line-two">View</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a><div><span class="work-card-caption">PROJECT / Dance championship &amp; media platform</span><h3 class="card-heading" id="work-artists-title">Artists Emerge</h3></div></div>
             </article>
           </div>
         </div>
@@ -321,16 +329,57 @@
               <label class="estimate-field">Email *<input type="email" name="email" placeholder="you@company.com" autocomplete="email" maxlength="254" required /></label>
               <label class="estimate-field">Company <span class="estimate-optional">(optional)</span><input type="text" name="company" placeholder="Your company or brand" autocomplete="organization" maxlength="150" /></label>
               <label class="estimate-field">Phone / WhatsApp <span class="estimate-optional">(optional)</span><input type="tel" name="phone" placeholder="Your number" autocomplete="tel" maxlength="40" /></label>
-              <label class="estimate-field">Budget (USD)
-                <select name="budget"><option value="Not sure yet">Let’s discuss it</option><option value="Under $2,000">Under $2,000</option><option value="$2,000–$5,000">$2,000–$5,000</option><option value="$5,000–$10,000">$5,000–$10,000</option><option value="$10,000+">$10,000+</option></select>
-              </label>
-              <label class="estimate-field">When would you like to start?
-                <select name="timeline"><option value="Flexible">I’m flexible</option><option value="As soon as possible">As soon as possible</option><option value="1–2 months">In 1–2 months</option><option value="3+ months">In 3+ months</option></select>
-              </label>
+              <div class="estimate-field">
+                <label class="estimate-field-label" for="estimate-budget">Budget (USD)</label>
+                <div class="custom-select" data-name="budget">
+                  <button type="button" class="custom-select-trigger" id="estimate-budget" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="custom-select-value">Let’s discuss it</span>
+                    <span class="custom-select-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  </button>
+                  <div class="custom-select-menu" role="listbox" aria-labelledby="estimate-budget">
+                    <div class="custom-select-option is-selected" role="option" aria-selected="true" data-value="Not sure yet">Let’s discuss it</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="Under $2,000">Under $2,000</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="$2,000–$5,000">$2,000–$5,000</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="$5,000–$10,000">$5,000–$10,000</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="$10,000+">$10,000+</div>
+                  </div>
+                  <select name="budget" tabindex="-1" aria-hidden="true" class="custom-select-native">
+                    <option value="Not sure yet" selected>Let’s discuss it</option>
+                    <option value="Under $2,000">Under $2,000</option>
+                    <option value="$2,000–$5,000">$2,000–$5,000</option>
+                    <option value="$5,000–$10,000">$5,000–$10,000</option>
+                    <option value="$10,000+">$10,000+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="estimate-field">
+                <label class="estimate-field-label" for="estimate-timeline">When would you like to start?</label>
+                <div class="custom-select" data-name="timeline">
+                  <button type="button" class="custom-select-trigger" id="estimate-timeline" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="custom-select-value">I’m flexible</span>
+                    <span class="custom-select-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                  </button>
+                  <div class="custom-select-menu" role="listbox" aria-labelledby="estimate-timeline">
+                    <div class="custom-select-option is-selected" role="option" aria-selected="true" data-value="Flexible">I’m flexible</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="As soon as possible">As soon as possible</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="1–2 months">In 1–2 months</div>
+                    <div class="custom-select-option" role="option" aria-selected="false" data-value="3+ months">In 3+ months</div>
+                  </div>
+                  <select name="timeline" tabindex="-1" aria-hidden="true" class="custom-select-native">
+                    <option value="Flexible" selected>I’m flexible</option>
+                    <option value="As soon as possible">As soon as possible</option>
+                    <option value="1–2 months">In 1–2 months</option>
+                    <option value="3+ months">In 3+ months</option>
+                  </select>
+                </div>
+              </div>
               <label class="estimate-field estimate-field-full">About your project *<textarea name="details" placeholder="What do you have in mind?" minlength="10" maxlength="3000" required></textarea></label>
             </div>
             <div class="estimate-form-footer">
-              <p class="estimate-form-note">A few details are enough to get started.<br />* Required fields</p>
               <button class="estimate-submit roll-button" type="submit" aria-label="Send enquiry"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Send enquiry</span><span class="roll-line roll-line-two">Send enquiry</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span></span></button>
             </div>
             <p class="estimate-status" role="status" aria-live="polite" hidden></p>
@@ -338,11 +387,6 @@
         </div>
       </section>
 
-      <dialog class="work-preview" aria-labelledby="work-preview-title">
-        <div class="work-preview-bar"><span>ALGOFORT / SELECTED CONCEPT</span><button class="work-preview-close" type="button" aria-label="Close project preview">Close <span aria-hidden="true">×</span></button></div>
-        <div class="work-preview-image"><img src="" alt="" /></div>
-        <div class="work-preview-footer"><div><span class="work-preview-category"></span><h2 id="work-preview-title"></h2></div><span>PROJECT PREVIEW</span></div>
-      </dialog>
 
     </main>
     <footer class="site-footer" id="contact" aria-label="Algofort footer">
@@ -353,17 +397,13 @@
               <input type="email" name="email" aria-label="Email address" placeholder="Enter your email" autocomplete="email" maxlength="254" required />
               <button type="submit" class="footer-subscribe" aria-label="Subscribe to newsletter"><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span></span></button>
             </form>
-            <p class="footer-consent">By subscribing you agree with our<br /><a href="https://algoforts.vercel.app/#privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+            <p class="footer-consent">By subscribing you agree with our<br /><a href="https://www.algofort.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
             <p class="footer-status" role="status" aria-live="polite" hidden></p>
           </div>
           <div class="footer-columns">
             <nav class="footer-column" aria-label="Company">
               <h3 class="footer-label">Company</h3>
-              <ul><li><a href="#who">Agency</a></li><li><a href="#services">Solutions</a></li><li><a href="#work">Work</a></li><li><a href="#process">Our process</a></li><li><a href="#testimonials">Client stories</a></li></ul>
-            </nav>
-            <nav class="footer-column" aria-label="Social">
-              <h3 class="footer-label">Social</h3>
-              <ul><li><a href="https://linkedin.com/company/algofort" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="https://instagram.com/algofort" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://facebook.com/algofort" target="_blank" rel="noopener noreferrer">Facebook</a></li></ul>
+              <ul><li><a href="#who">Agency</a></li><li><a href="#services">Solutions</a></li><li><a href="#work">Projects</a></li><li><a href="#process">Our process</a></li><li><a href="#testimonials">Client stories</a></li></ul>
             </nav>
             <div class="footer-column footer-contact">
               <h3 class="footer-label">Contact</h3>
@@ -377,6 +417,51 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
+
+    <!-- Entrance Popup Modal (Shown once per visitor based on Cookie/LocalStorage) -->
+    <div class="entrance-popup-backdrop" id="entrance-popup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <div class="entrance-popup-modal">
+        <div class="entrance-popup-media">
+          <picture>
+            <source srcset="/images/coding-workspace.webp" type="image/webp" />
+            <img class="entrance-popup-img" src="/images/coding-workspace.png" alt="Algofort web development workspace" width="941" height="1672" loading="eager" decoding="async" />
+          </picture>
+        </div>
+        <div class="entrance-popup-content">
+          <button type="button" class="entrance-popup-close" aria-label="Close popup">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="entrance-popup-content-inner">
+            <p class="entrance-popup-kicker section-label"><span class="section-plus" aria-hidden="true">+</span> Let's talk</p>
+            <h2 class="entrance-popup-title" id="popup-title">Have a project in mind?</h2>
+            <p class="entrance-popup-lead">Tell us a little about it. A new website, a redesign, or an idea you’re still figuring out — we’d like to hear it.</p>
+            <form class="entrance-popup-form" aria-label="Project enquiry popup form">
+              <div class="entrance-popup-fields">
+                <label class="entrance-popup-field">Name *<input type="text" name="name" placeholder="Your name" autocomplete="name" maxlength="100" required /></label>
+                <label class="entrance-popup-field">Email *<input type="email" name="email" placeholder="you@company.com" autocomplete="email" maxlength="254" required /></label>
+                <label class="entrance-popup-field entrance-popup-field-full">Phone / WhatsApp <span class="entrance-popup-optional">(optional)</span><input type="tel" name="phone" placeholder="Your number" autocomplete="tel" maxlength="50" /></label>
+                <label class="entrance-popup-field entrance-popup-field-full">Message *<textarea name="message" placeholder="What do you have in mind?" minlength="10" maxlength="3000" required></textarea></label>
+              </div>
+              <div class="entrance-popup-form-footer">
+                <button class="entrance-popup-submit roll-button" type="submit" aria-label="Send enquiry">
+                  <span class="roll-label" aria-hidden="true">
+                    <span class="roll-line roll-line-one">Send enquiry</span>
+                    <span class="roll-line roll-line-two">Send enquiry</span>
+                  </span>
+                  <span class="cta-arrows" aria-hidden="true">
+                    <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                    <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </span>
+                </button>
+              </div>
+              <p class="entrance-popup-status" role="status" aria-live="polite" hidden></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

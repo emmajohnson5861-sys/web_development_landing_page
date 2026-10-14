@@ -33,11 +33,7 @@
 
 .work-heading h2 {
   margin: 0;
-  color: #080808;
-  font-size: clamp(100px, 12.5vw, 160px);
-  font-weight: 700;
-  line-height: .88;
-  letter-spacing: -.1em;
+  color: #0a0b0d;
 }
 
 .work-heading h2 > span { display: block; }
@@ -149,7 +145,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
   transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -167,45 +163,11 @@
 }
 
 .work-view {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  min-width: 121px;
-  height: 52px;
-  padding: 5px 5px 5px 16px;
-  border: 0;
-  border-radius: 999px;
-  background: #fff;
-  color: #101111;
-  font-size: 15px;
-  font-weight: 600;
-  transition: background .35s ease, color .35s ease;
+  min-width: 136px;
+  min-height: 50px;
+  padding: 13px 20px;
+  gap: 22px;
 }
-
-.work-view-arrow {
-  display: grid;
-  place-items: center;
-  width: 41px;
-  height: 41px;
-  flex: none;
-  overflow: hidden;
-  border-radius: 50%;
-  background: #101111;
-  color: #fff;
-  transition: background .35s ease;
-}
-
-.work-view-arrow svg {
-  display: block;
-  width: 19px;
-  height: 19px;
-  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
-}
-
-.work-view:is(:hover, :focus-visible) { background: #101111; color: #fff; }
-.work-view:is(:hover, :focus-visible) .work-view-arrow { background: var(--orange); }
-.work-view:is(:hover, :focus-visible) svg { transform: translateX(3px); }
 
 .work-card-caption {
   display: block;
@@ -224,32 +186,6 @@
   overflow-wrap: anywhere;
 }
 
-.work-preview {
-  width: min(calc(100% - 28px), 1040px);
-  max-height: calc(100dvh - 32px);
-  padding: clamp(15px, 2.5vw, 28px);
-  overflow: auto;
-  border: 0;
-  border-radius: 20px;
-  background: var(--paper);
-  color: #0b0b0b;
-  box-shadow: 0 40px 120px #0005;
-}
-
-body.modal-open { overflow: hidden; }
-.work-preview::backdrop { background: #050505c7; backdrop-filter: blur(9px); }
-.work-preview-bar,
-.work-preview-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.work-preview-bar { margin-bottom: 17px; color: #656965; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
-.work-preview-close { border: 0; background: transparent; color: #0b0b0b; font-size: 14px; font-weight: 600; }
-.work-preview-close span { padding-left: 6px; font-size: 25px; font-weight: 300; vertical-align: middle; }
-.work-preview-image { overflow: hidden; border-radius: 12px; background: #e4e4e2; }
-.work-preview-image img { display: block; width: 100%; max-height: 65dvh; object-fit: contain; }
-.work-preview-footer { margin-top: 20px; align-items: end; }
-.work-preview-category,
-.work-preview-footer > span { color: #737773; font-size: 12px; font-weight: 600; text-transform: uppercase; }
-.work-preview-footer h2 { margin: 3px 0 0; font-size: clamp(31px, 4vw, 55px); font-weight: 600; line-height: 1; letter-spacing: -.06em; }
-
 @media (max-width: 1100px) {
   .work-card {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr) minmax(0, .88fr);
@@ -265,7 +201,6 @@ body.modal-open { overflow: hidden; }
   .work-inner { padding-block: var(--section-space); }
   .work-heading { position: relative; top: auto; margin-bottom: 50px; }
   .work-kicker { font-size: 12px; }
-  .work-heading h2 { font-size: clamp(80px, 21vw, 158px); }
   .work-stack { gap: 22px; }
   .work-card {
     position: relative;
@@ -282,14 +217,10 @@ body.modal-open { overflow: hidden; }
   .work-card-details { grid-area: details; }
   .work-data-top { min-height: 100px; }
   .work-data-bottom { min-height: 81px; }
-  .work-card h3 { font-size: clamp(29px, 6vw, 45px); }
-  .work-view { min-width: 104px; height: 45px; gap: 16px; padding-left: 12px; font-size: 13px; }
-  .work-view-arrow { width: 35px; height: 35px; }
-  .work-view-arrow svg { width: 17px; height: 17px; }
+  .work-view { min-width: 114px; min-height: 44px; padding: 10px 16px; gap: 14px; font-size: 14px; }
 }
 
 @media (max-width: 420px) {
-  .work-heading h2 { font-size: 21vw; }
   .work-card { gap: 11px; padding: 11px; }
   .work-card-caption { font-size: 10px; }
   .work-card h3 { font-size: 29px; }
@@ -297,7 +228,6 @@ body.modal-open { overflow: hidden; }
   .work-data-bottom { padding: 11px; }
   .work-data-top strong { font-size: 36px; }
   .work-data-bottom strong { font-size: 17px; }
-  .work-preview-footer > span { display: none; }
 }
 
 @media (min-width: 761px) and (max-height: 600px) {
@@ -312,7 +242,5 @@ body.modal-open { overflow: hidden; }
   .work-card-data,
   .work-card-details { filter: none !important; }
   .work-visual img,
-  .work-view,
-  .work-view-arrow,
-  .work-view-arrow svg { transition: none; }
+  .work-view { transition: none; }
 }

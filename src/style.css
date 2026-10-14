@@ -3,6 +3,10 @@
   --section-dark-text: #f7f7f5;
   --section-dark-muted: #aaa9a6;
   --section-space: clamp(82px, 8vw, 120px);
+  --ink: #050505;
+  --orange: #ff6716;
+  --paper: #f7f7f5;
+  --muted: #898d95;
   font-family: 'DM Sans', Arial, sans-serif;
   color: #151616;
   background: #f1f1ee;
@@ -11,8 +15,34 @@
   -webkit-font-smoothing: antialiased;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: auto; }
+* {
+  box-sizing: border-box;
+  scrollbar-color: #050505 transparent;
+  scrollbar-width: thin;
+}
+html {
+  scroll-behavior: auto;
+}
+
+/* Custom Scrollbar (#050505) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #050505;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222222;
+}
+
 body { min-width: 320px; margin: 0; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
@@ -36,10 +66,131 @@ a:focus-visible, button:focus-visible { outline: 2px solid #f47a1f; outline-offs
   line-height: .6;
 }
 
+/* ==========================================================================
+   Global Button Component (.roll-button)
+   Used across header, hero showcase, form submission, and throughout site
+   ========================================================================== */
+.roll-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  min-width: 218px;
+  min-height: 57px;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.roll-button::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: 0;
+  background: #050505;
+  transition: height 500ms ease;
+}
+
+.roll-button:is(:hover, :focus-visible) {
+  background: #050505;
+  color: #fff;
+}
+
+.roll-button:is(:hover, :focus-visible)::before {
+  height: 100%;
+}
+
+.roll-label {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.roll-line {
+  display: block;
+  white-space: nowrap;
+  transition: transform 500ms ease, top 500ms ease;
+}
+
+.roll-line-one {
+  position: relative;
+}
+
+.roll-line-two {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+}
+
+.roll-button:is(:hover, :focus-visible) .roll-line-one {
+  transform: translateY(-150%);
+}
+
+.roll-button:is(:hover, :focus-visible) .roll-line-two {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Rolling Arrows (.cta-arrows) */
+.cta-arrows {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 19px;
+  height: 19px;
+  overflow: hidden;
+}
+
+.cta-arrows span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transition: transform 500ms ease;
+}
+
+.cta-arrows svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-arrows span:last-child {
+  transform: translateX(-125%);
+}
+
+.roll-button:is(:hover, :focus-visible) .cta-arrows span:first-child {
+  transform: translateX(125%);
+}
+
+.roll-button:is(:hover, :focus-visible) .cta-arrows span:last-child {
+  transform: translateX(0);
+}
+
 @media (max-width: 620px) {
   :root { --section-space: 72px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .roll-button,
+  .roll-button::before,
+  .roll-line,
+  .cta-arrows span {
+    transition: none;
+  }
 }
+

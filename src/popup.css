@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Entrance Popup Component (.entrance-popup)
+   Appears once per visitor based on cookies & localStorage with smooth animations
+   ========================================================================== */
+
+body.popup-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.entrance-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 36px);
+  background: rgba(5, 5, 5, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-popup-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.entrance-popup-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: 840px;
+  min-height: 580px;
+  max-height: min(90vh, 640px);
+  background: #f7f7f5;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.35);
+  transform: scale(0.92) translateY(24px);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-popup-backdrop.is-visible .entrance-popup-modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Left Media Column */
+.entrance-popup-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: #0f1011;
+  overflow: hidden;
+}
+
+.entrance-popup-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.entrance-popup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Right Content Column */
+.entrance-popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+  scrollbar-color: #050505 transparent;
+  scrollbar-width: thin;
+}
+
+.entrance-popup-content-inner {
+  display: flex;
+  flex-direction: column;
+  margin-block: auto;
+  width: 100%;
+}
+
+/* Close Button */
+.entrance-popup-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #151616;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, transform 0.25s;
+  z-index: 10;
+}
+
+.entrance-popup-close:hover,
+.entrance-popup-close:focus-visible {
+  background: #050505;
+  color: #ffffff;
+  transform: rotate(90deg);
+  outline: none;
+}
+
+.entrance-popup-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Kicker & Heading */
+.entrance-popup-kicker {
+  margin: 0 0 6px;
+  color: #666666;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.entrance-popup-title {
+  margin: 0 0 6px;
+  color: #0a0b0d;
+  font-family: var(--heading-font);
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: var(--section-heading-weight, 500);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.entrance-popup-lead {
+  margin: 0 0 16px;
+  color: #676b67;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  max-width: 440px;
+}
+
+/* Form Styles - Strictly following estimate form */
+.entrance-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.entrance-popup-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 20px;
+}
+
+.entrance-popup-field {
+  display: block;
+  min-width: 0;
+  color: #555a54;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.entrance-popup-optional {
+  color: #888d84;
+  font-weight: 400;
+}
+
+.entrance-popup-field input,
+.entrance-popup-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 4px;
+  padding: 6px 0 8px;
+  border: 0;
+  border-bottom: 1px solid #bfc4b8;
+  border-radius: 0;
+  background: transparent;
+  color: #151616;
+  font: 400 16px/1.4 'DM Sans', Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+.entrance-popup-field input::placeholder,
+.entrance-popup-field textarea::placeholder {
+  color: #858b80;
+  opacity: 1;
+}
+
+.entrance-popup-field :is(input, textarea):focus,
+.entrance-popup-field :is(input, textarea):focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--orange);
+}
+
+.entrance-popup-field textarea {
+  min-height: 92px;
+  max-height: 160px;
+  resize: vertical;
+}
+
+.entrance-popup-field-full {
+  grid-column: 1 / -1;
+}
+
+/* Footer & Submit Button */
+.entrance-popup-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.entrance-popup-submit {
+  min-width: 180px;
+  min-height: 48px;
+  padding: 11px 20px;
+  font-size: 14px;
+}
+
+.entrance-popup-status {
+  margin: 10px 0 0;
+  color: #676b67;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.entrance-popup-status[hidden] {
+  display: none;
+}
+
+.entrance-popup-status.is-success {
+  color: #1b7340;
+}
+
+.entrance-popup-status.is-error {
+  color: #bc2b2b;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 860px) {
+  .entrance-popup-modal {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    max-height: 90vh;
+    border-radius: 20px;
+  }
+
+  .entrance-popup-media {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .entrance-popup-content {
+    padding: 24px;
+  }
+
+  .entrance-popup-fields {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .entrance-popup-form-footer {
+    justify-content: stretch;
+  }
+
+  .entrance-popup-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .entrance-popup-media {
+    display: none;
+  }
+
+  .entrance-popup-modal {
+    border-radius: 18px;
+  }
+
+  .entrance-popup-content {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance-popup-backdrop,
+  .entrance-popup-modal,
+  .entrance-popup-close,
+  .entrance-popup-field input,
+  .entrance-popup-field textarea {
+    transition: none !important;
+  }
+}

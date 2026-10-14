@@ -1,36 +1,54 @@
-import './style.css';
-import './hero.css';
-import './who.css';
-import './services.css';
-import './process.css';
-import './work.css';
-import './trust.css';
-import './testimonials.css';
-import './estimate.css';
+import './index.css';
 import './estimate.js';
-import './footer.css';
 import './footer.js';
-import './typography.css';
-import 'lenis/dist/lenis.css';
+import { initEntrancePopup } from './popup.js';
 import Lenis from 'lenis';
 
 const menuButton = document.querySelector('.menu-button');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 function closeMenu() {
+  if (!menuButton || !mobileMenu) return;
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Open menu');
-  mobileMenu.hidden = true;
+  mobileMenu.classList.remove('is-open');
+  setTimeout(() => {
+    if (menuButton.getAttribute('aria-expanded') === 'false') {
+      mobileMenu.hidden = true;
+    }
+  }, 550);
+}
+
+function openMenu() {
+  if (!menuButton || !mobileMenu) return;
+  menuButton.setAttribute('aria-expanded', 'true');
+  menuButton.setAttribute('aria-label', 'Close menu');
+  mobileMenu.hidden = false;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      mobileMenu.classList.add('is-open');
+    });
+  });
 }
 
 menuButton.addEventListener('click', () => {
   const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
-  mobileMenu.hidden = isOpen;
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
-mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-document.addEventListener('keydown', (event) => {
+
+mobileMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.querySelectorAll('a').forEach((l) => l.classList.remove('is-active'));
+    link.classList.add('is-active');
+    closeMenu();
+  });
+});
+
+window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMenu();
 });
 window.addEventListener('resize', () => {
@@ -45,6 +63,7 @@ const smoothScroll = new Lenis({
   wheelMultiplier: .9,
   lerp: .085,
 });
+window.smoothScroll = smoothScroll;
 const videos = document.querySelectorAll('.shared-video');
 
 const whoSection = document.querySelector('.who');
@@ -277,34 +296,6 @@ smoothScroll.on('scroll', queueTestimonialUpdate);
 reduceMotion.addEventListener('change', queueTestimonialUpdate);
 queueTestimonialUpdate();
 
-const workPreview = document.querySelector('.work-preview');
-const workPreviewImage = workPreview.querySelector('img');
-const workPreviewTitle = workPreview.querySelector('#work-preview-title');
-const workPreviewCategory = workPreview.querySelector('.work-preview-category');
-
-workCards.forEach((card) => {
-  card.querySelector('.work-view').addEventListener('click', () => {
-    const image = card.querySelector('.work-visual img');
-    workPreviewImage.src = image.getAttribute('src');
-    workPreviewImage.alt = image.alt;
-    workPreviewTitle.textContent = card.querySelector('h3').textContent;
-    workPreviewCategory.textContent = card.querySelector('.work-card-caption').textContent;
-    workPreview.showModal();
-    smoothScroll.stop();
-    document.body.classList.add('modal-open');
-  });
-});
-
-workPreview.querySelector('.work-preview-close').addEventListener('click', () => workPreview.close());
-workPreview.addEventListener('click', (event) => {
-  if (event.target === workPreview) workPreview.close();
-});
-workPreview.addEventListener('close', () => {
-  document.body.classList.remove('modal-open');
-  smoothScroll.start();
-  workPreviewImage.removeAttribute('src');
-});
-
 // The SVG clip uses objectBoundingBox coordinates. Convert pixel radii for both
 // axes so its curved corners stay circular as the video changes size.
 const showcaseMask = document.querySelector('.showcase-video-mask');
@@ -393,3 +384,6 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
   }, { threshold: 0.18 });
   document.querySelectorAll('.reveal-on-scroll').forEach((element) => observer.observe(element));
 }
+
+initEntrancePopup();
+

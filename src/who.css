@@ -1,6 +1,6 @@
 .who {
   position: relative;
-  padding: var(--section-space) 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -47,15 +47,21 @@
   margin-top: 72px;
 }
 
+.section-heading.who-statement,
 .who-statement {
   position: sticky;
   top: var(--who-sticky-top, 30vh);
-  width: min(100%, 1080px);
+  width: 1255.99px;
+  max-width: 100%;
   margin: 0 auto;
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -.052em;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--heading-font);
+  font-size: var(--section-heading-size);
+  font-weight: var(--section-heading-weight);
+  font-style: var(--section-heading-style);
+  line-height: var(--section-heading-line-height);
+  letter-spacing: var(--section-heading-letter-spacing);
   text-wrap: balance;
 }
 
@@ -99,18 +105,14 @@
 }
 
 @media (max-width: 900px) {
-  .who { padding-top: var(--section-space); }
   .who-copy-track { height: 760px; margin-top: 65px; }
-  .who-statement { font-size: clamp(38px, 6.4vw, 58px); }
   .who-pattern-stage img { width: 810px; height: 810px; top: -90px; right: -90px; }
 }
 
 @media (max-width: 620px) {
-  .who { padding-top: var(--section-space); }
   .who-label {
   justify-content: center; font-size: 14px; }
   .who-copy-track { height: 700px; margin-top: 64px; }
-  .who-statement { font-size: clamp(32px, 8vw, 43px); line-height: 1.18; letter-spacing: -.05em; }
   .who-pattern-stage img { width: 350px; height: 350px; top: -40px; right: -40px; }
   .who-image-track { height: 205vh; }
   .who-image-stage img { border-radius: 9px; }

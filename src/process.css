@@ -32,10 +32,7 @@
 
 .process-title {
   margin: 0;
-  font-size: clamp(65px, 6.5vw, 90px);
-  font-weight: 500;
-  line-height: .99;
-  letter-spacing: -.083em;
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -114,10 +111,6 @@
   .process-card h3 { font-size: clamp(25px, 2.6vw, 30px); }
 }
 
-@media (max-width: 900px) {
-  .process-title { font-size: clamp(60px, 7.5vw, 75px); }
-}
-
 @media (max-width: 760px) {
   .process-inner { padding-top: var(--section-space); padding-bottom: var(--section-space); }
   .process-intro { display: block; margin-bottom: 52px; }
@@ -131,7 +124,6 @@
 
 @media (max-width: 620px) {
   .process-kicker { font-size: 13px; }
-  .process-title { font-size: clamp(47px, 10.8vw, 68px); }
 }
 
 @media (max-width: 420px) {
