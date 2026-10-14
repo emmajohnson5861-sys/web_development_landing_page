@@ -421,6 +421,12 @@
     <!-- Entrance Popup Modal (Shown once per visitor based on Cookie/LocalStorage) -->
     <div class="entrance-popup-backdrop" id="entrance-popup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popup-title">
       <div class="entrance-popup-modal">
+        <button type="button" class="entrance-popup-close" aria-label="Close popup">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
         <div class="entrance-popup-media">
           <picture>
             <source srcset="/images/coding-workspace.webp" type="image/webp" />
@@ -428,12 +434,6 @@
           </picture>
         </div>
         <div class="entrance-popup-content">
-          <button type="button" class="entrance-popup-close" aria-label="Close popup">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
           <div class="entrance-popup-content-inner">
             <p class="entrance-popup-kicker section-label"><span class="section-plus" aria-hidden="true">+</span> Let's talk</p>
             <h2 class="entrance-popup-title" id="popup-title">Have a project in mind?</h2>
