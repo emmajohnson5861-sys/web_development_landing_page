@@ -36,9 +36,9 @@ body.popup-locked {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   width: 100%;
-  max-width: 860px;
-  min-height: 520px;
-  max-height: min(92vh, 660px);
+  max-width: 850px;
+  min-height: auto;
+  max-height: min(92vh, 620px);
   background: #f7f7f5;
   border-radius: 20px;
   overflow: hidden;
@@ -115,7 +115,7 @@ body.popup-locked {
   display: grid;
   align-content: center;
   min-height: 0;
-  padding: clamp(28px, 4vw, 42px) clamp(26px, 4vw, 42px);
+  padding: 42px;
   overflow-y: auto;
   scrollbar-color: #050505 transparent;
   scrollbar-width: thin;
