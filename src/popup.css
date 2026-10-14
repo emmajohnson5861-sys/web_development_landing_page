@@ -115,7 +115,7 @@ body.popup-locked {
   display: grid;
   align-content: center;
   min-height: 0;
-  padding: 42px;
+  padding: 38px 42px;
   overflow-y: auto;
   scrollbar-color: #050505 transparent;
   scrollbar-width: thin;
@@ -131,7 +131,7 @@ body.popup-locked {
 
 /* Kicker & Heading */
 .entrance-popup-kicker {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   color: #666666;
   font-size: 13px;
   font-weight: 500;
@@ -139,17 +139,17 @@ body.popup-locked {
 }
 
 .entrance-popup-title {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: #0a0b0d;
   font-family: var(--heading-font);
-  font-size: clamp(23px, 2.3vw, 28px);
+  font-size: clamp(22px, 2.2vw, 27px);
   font-weight: var(--section-heading-weight, 500);
   line-height: 1.12;
   letter-spacing: -0.05em;
 }
 
 .entrance-popup-lead {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   color: #676b67;
   font-size: 13px;
   line-height: 1.45;
@@ -161,7 +161,7 @@ body.popup-locked {
 .entrance-popup-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   margin: 0;
   padding: 0;
 }
@@ -169,7 +169,7 @@ body.popup-locked {
 .entrance-popup-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px 18px;
+  gap: 15px 18px;
 }
 
 .entrance-popup-field {
@@ -191,7 +191,7 @@ body.popup-locked {
   display: block;
   width: 100%;
   min-width: 0;
-  margin-top: 4px;
+  margin-top: 3px;
   padding: 5px 0 6px;
   border: 0;
   border-bottom: 1px solid #bfc4b8;
@@ -217,8 +217,8 @@ body.popup-locked {
 }
 
 .entrance-popup-field textarea {
-  min-height: 118px;
-  max-height: 160px;
+  min-height: 88px;
+  max-height: 130px;
   resize: none;
 }
 
