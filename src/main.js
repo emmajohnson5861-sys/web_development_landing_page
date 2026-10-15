@@ -209,7 +209,8 @@ reduceMotion.addEventListener('change', queueProcessUpdate);
 updateProcessCards();
 
 const workStack = document.querySelector('.work-stack');
-const workCards = [...workStack.querySelectorAll('.work-card')];
+const workCards = workStack ? [...workStack.querySelectorAll('.work-card')] : [];
+const workTitle = document.getElementById('work-title');
 let workFrame = 0;
 let workBlurTimer = 0;
 let lastWorkScroll = window.scrollY;
@@ -217,11 +218,16 @@ let lastWorkTime = performance.now();
 
 function updateWorkCards() {
   workFrame = 0;
+  if (!workStack || !workCards.length) return;
+
   if (window.innerWidth <= 760 || window.innerHeight <= 600 || reduceMotion.matches) {
     workCards.forEach((card) => {
       card.style.removeProperty('--work-card-scale');
       card.style.removeProperty('--work-motion-blur');
     });
+    if (workTitle) {
+      workTitle.style.removeProperty('--work-title-scale');
+    }
     return;
   }
 
@@ -233,6 +239,20 @@ function updateWorkCards() {
   const stackTop = workStack.getBoundingClientRect().top;
   const stickyTop = parseFloat(getComputedStyle(workCards[0]).top);
   const stackGap = parseFloat(getComputedStyle(workStack).rowGap) || 0;
+
+  if (workTitle) {
+    const scrolledPastSticky = stickyTop - stackTop;
+    if (scrolledPastSticky <= 0) {
+      workTitle.style.setProperty('--work-title-scale', '1');
+    } else {
+      const scrollRange = Math.max(250, (workCards[0].offsetHeight || 380) * 0.9);
+      const progress = Math.min(1, scrolledPastSticky / scrollRange);
+      const smoothProgress = progress * progress * (3 - 2 * progress);
+      const minScale = 0.7;
+      const titleScale = 1 - (1 - minScale) * smoothProgress;
+      workTitle.style.setProperty('--work-title-scale', titleScale.toFixed(4));
+    }
+  }
 
   let naturalOffset = 0;
   workCards.forEach((card) => {
@@ -259,6 +279,7 @@ function queueWorkUpdate() {
 window.addEventListener('scroll', queueWorkUpdate, { passive: true });
 window.addEventListener('resize', queueWorkUpdate);
 smoothScroll.on('scroll', queueWorkUpdate);
+reduceMotion.addEventListener('change', queueWorkUpdate);
 queueWorkUpdate();
 
 const testimonialCards = [...document.querySelectorAll('.testimonial-card')];

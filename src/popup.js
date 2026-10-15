@@ -1,10 +1,10 @@
 /**
  * Entrance Popup Component for Algofort
- * Displays once per visitor based on Cookie & LocalStorage
+ * Displays on page load unless the visitor chooses "Don't show again"
  */
 
-const POPUP_STORAGE_KEY = 'algofort_entrance_popup_seen';
-const POPUP_COOKIE_NAME = 'algofort_entrance_popup_seen';
+const POPUP_STORAGE_KEY = 'algofort_dont_show_popup';
+const POPUP_COOKIE_NAME = 'algofort_dont_show_popup';
 
 function getCookie(name) {
   const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
@@ -35,14 +35,29 @@ function markPopupAsSeen() {
   setCookie(POPUP_COOKIE_NAME, 'true', 365);
 }
 
+function unmarkPopupAsSeen() {
+  try {
+    localStorage.removeItem(POPUP_STORAGE_KEY);
+  } catch (e) {
+    // Ignore storage errors
+  }
+  document.cookie = `${POPUP_COOKIE_NAME}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;SameSite=Lax`;
+}
+
 export function initEntrancePopup() {
   const backdrop = document.getElementById('entrance-popup');
   if (!backdrop) return;
+
+  // Clean legacy auto-dismiss key so users are not blocked by previous versions
+  try {
+    localStorage.removeItem('algofort_entrance_popup_seen');
+  } catch (e) {}
 
   const modal = backdrop.querySelector('.entrance-popup-modal');
   const closeBtn = backdrop.querySelector('.entrance-popup-close');
   const form = backdrop.querySelector('.entrance-popup-form');
   const statusEl = backdrop.querySelector('.entrance-popup-status');
+  const dontShowCheckbox = backdrop.querySelector('#popup-dont-show');
 
   let isOpen = false;
 
@@ -60,9 +75,15 @@ export function initEntrancePopup() {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         backdrop.classList.add('is-visible');
-        markPopupAsSeen();
       });
     });
+  }
+
+  function handleDismiss() {
+    if (dontShowCheckbox && dontShowCheckbox.checked) {
+      markPopupAsSeen();
+    }
+    closePopup();
   }
 
   function closePopup() {
@@ -78,25 +99,36 @@ export function initEntrancePopup() {
     }
   }
 
+  // Sync checkbox changes to storage immediately
+  if (dontShowCheckbox) {
+    dontShowCheckbox.addEventListener('change', () => {
+      if (dontShowCheckbox.checked) {
+        markPopupAsSeen();
+      } else {
+        unmarkPopupAsSeen();
+      }
+    });
+  }
+
   // Event Listeners
   if (closeBtn) {
     closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      closePopup();
+      handleDismiss();
     });
   }
 
   // Close when clicking backdrop outside modal
   backdrop.addEventListener('click', (e) => {
     if (e.target === backdrop) {
-      closePopup();
+      handleDismiss();
     }
   });
 
   // Close on Escape key
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isOpen) {
-      closePopup();
+      handleDismiss();
     }
   });
 
@@ -104,6 +136,10 @@ export function initEntrancePopup() {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      if (dontShowCheckbox && dontShowCheckbox.checked) {
+        markPopupAsSeen();
+      }
 
       const submitBtn = form.querySelector('.entrance-popup-submit');
       const formData = new FormData(form);
@@ -138,15 +174,24 @@ export function initEntrancePopup() {
   window.resetEntrancePopup = () => {
     try {
       localStorage.removeItem(POPUP_STORAGE_KEY);
+      localStorage.removeItem('algofort_entrance_popup_seen');
     } catch (e) {}
     document.cookie = `${POPUP_COOKIE_NAME}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;SameSite=Lax`;
-    console.log('Entrance popup cookie & localStorage reset. Refresh or run openEntrancePopup() to test.');
+    document.cookie = `algofort_entrance_popup_seen=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;SameSite=Lax`;
+    if (dontShowCheckbox) dontShowCheckbox.checked = false;
+    console.log('Entrance popup preference reset. Refresh to see page-load popup.');
   };
 
-  // Trigger entrance popup once if not seen before
+  // Trigger entrance popup on page load if not opted out
   if (!hasSeenPopup()) {
-    setTimeout(() => {
-      openPopup();
-    }, 1800);
+    const triggerPopup = () => {
+      setTimeout(openPopup, 200);
+    };
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      triggerPopup();
+    } else {
+      window.addEventListener('DOMContentLoaded', triggerPopup, { once: true });
+    }
   }
 }
