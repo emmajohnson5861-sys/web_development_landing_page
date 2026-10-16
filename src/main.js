@@ -406,5 +406,89 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
   document.querySelectorAll('.reveal-on-scroll').forEach((element) => observer.observe(element));
 }
 
+/* ==========================================================================
+   Heading Entrance Reveal Animations (matching algofort-ten.vercel.app)
+   ========================================================================== */
+function splitTextIntoChars(el) {
+  if (!el || el.dataset.splitDone) return;
+  el.classList.add('title-reveal');
+  
+  let charIndex = 0;
+  
+  function split(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      if (!text) return null;
+      const fragment = document.createDocumentFragment();
+      const parts = text.split(/(\s+)/);
+      
+      parts.forEach((part) => {
+        if (/^\s+$/.test(part)) {
+          fragment.appendChild(document.createTextNode(part));
+        } else if (part.length > 0) {
+          const wordWrap = document.createElement('span');
+          wordWrap.className = 'word-wrap';
+          
+          for (const ch of part) {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'char';
+            charSpan.style.setProperty('--char-index', charIndex++);
+            charSpan.textContent = ch;
+            wordWrap.appendChild(charSpan);
+          }
+          
+          fragment.appendChild(wordWrap);
+        }
+      });
+      return fragment;
+    }
+    
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.tagName === 'BR') return null;
+      Array.from(node.childNodes).forEach((child) => {
+        const replacement = split(child);
+        if (replacement) node.replaceChild(replacement, child);
+      });
+    }
+    return null;
+  }
+  
+  split(el);
+  el.dataset.splitDone = 'true';
+}
+
+function initHeadingAnimations() {
+  const targetElements = document.querySelectorAll([
+    '#process-title',
+    '#work-title',
+    '#trust-title',
+    '#why-trust h3',
+    '#testimonials-title',
+    '#estimate-title'
+  ].join(', '));
+
+  if (!targetElements.length) return;
+
+  targetElements.forEach(splitTextIntoChars);
+
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+    targetElements.forEach((el) => el.classList.add('is-title-visible'));
+    return;
+  }
+
+  const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-title-visible');
+      titleObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+
+  targetElements.forEach((el) => {
+    titleObserver.observe(el);
+  });
+}
+
+initHeadingAnimations();
 initEntrancePopup();
 
