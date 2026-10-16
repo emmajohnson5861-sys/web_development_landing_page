@@ -28,15 +28,37 @@
         <a href="#testimonials" aria-label="Testimonials"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Testimonials</span><span class="roll-line roll-line-two">Testimonials</span></span></a>
       </nav>
       <a class="contact-button roll-button" href="#estimate" aria-label="Contact Us"><span class="roll-label" aria-hidden="true"><span class="roll-line roll-line-one">Contact Us</span><span class="roll-line roll-line-two">Contact Us</span></span><span class="cta-arrows" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a>
-      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation">
+        <svg class="menu-grid-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+      </button>
     </header>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
-      <a href="#who">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#work">Projects</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#estimate">Contact Us</a>
-    </nav>
+    <div class="mobile-menu-backdrop" hidden aria-hidden="true"></div>
+    <div id="mobile-navigation" class="mobile-menu-dialog" hidden aria-hidden="true">
+      <nav class="mobile-dialog-links" aria-label="Mobile main navigation">
+        <a href="#top" class="mobile-dialog-link"><span>Home</span></a>
+        <a href="#work" class="mobile-dialog-link"><span>Work</span></a>
+        <a href="#services" class="mobile-dialog-link"><span>Services</span></a>
+        <a href="#process" class="mobile-dialog-link"><span>Process</span></a>
+        <a href="#testimonials" class="mobile-dialog-link"><span>Reviews</span></a>
+      </nav>
+      <div class="mobile-menu-contacts">
+        <p>Contacts</p>
+        <a href="tel:+923233678383">+92 323 367 8383</a>
+        <a href="mailto:hello@algofort.com">hello@algofort.com</a>
+      </div>
+      <a class="mobile-menu-cta" href="#estimate">
+        <span>Get Started</span>
+        <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
 
     <main id="top">
       <section class="hero page-width" aria-labelledby="hero-title">
