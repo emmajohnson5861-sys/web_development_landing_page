@@ -66,6 +66,14 @@ h3.card-heading,
   overflow: hidden;
   vertical-align: top;
   line-height: inherit;
+  padding-right: 0.14em;
+  margin-right: -0.14em;
+  padding-left: 0.02em;
+  margin-left: -0.02em;
+}
+
+.title-reveal .word-wrap > .char:last-child {
+  letter-spacing: 0;
 }
 
 .title-reveal .char {
