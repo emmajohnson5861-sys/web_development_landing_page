@@ -72,6 +72,8 @@
 .work-card:nth-child(2) { z-index: 2; }
 .work-card:nth-child(3) { z-index: 3; }
 .work-card:nth-child(4) { z-index: 4; }
+.work-card:nth-child(5) { z-index: 5; }
+.work-card:nth-child(6) { z-index: 6; }
 
 .work-card-data,
 .work-card-details {
@@ -159,6 +161,8 @@
 .work-visual-still { background: #c7795c; }
 .work-visual-mono { background: #a9adbd; }
 .work-visual-field { background: #a3aea0; }
+.work-visual-hoplon { background: #0c1017; }
+.work-visual-wovvo { background: #fbf5ee; }
 
 .work-card-details {
   display: flex;
@@ -192,6 +196,20 @@
   overflow-wrap: anywhere;
 }
 
+.work-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(48px, 6vw, 76px);
+  position: relative;
+  z-index: 10;
+}
+
+.work-all-btn {
+  min-width: 220px;
+  gap: 24px;
+}
+
 @media (max-width: 1100px) {
   .work-card {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr) minmax(0, .88fr);
@@ -209,6 +227,7 @@
   #work-title { transform: none !important; }
   .work-kicker { font-size: 12px; }
   .work-stack { gap: 22px; }
+  .work-action { margin-top: 36px; }
   .work-card {
     position: relative;
     top: auto;

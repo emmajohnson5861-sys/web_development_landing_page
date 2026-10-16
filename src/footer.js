@@ -4,7 +4,7 @@ const newsletterStatus = document.querySelector('.footer-status');
 // UI preview, consistent with the estimate form's current scope.
 newsletter.addEventListener('submit', (event) => {
   event.preventDefault();
-  newsletterStatus.textContent = 'This is a preview. Your email has not been subscribed.';
+  newsletterStatus.textContent = 'This is a preview. You have not been subscribed.';
   newsletterStatus.hidden = false;
 });
 
