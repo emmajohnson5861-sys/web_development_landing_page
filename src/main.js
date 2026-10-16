@@ -459,6 +459,7 @@ function splitTextIntoChars(el) {
 
 function initHeadingAnimations() {
   const targetElements = document.querySelectorAll([
+    '#services-title',
     '#process-title',
     '#work-title',
     '#trust-title',
